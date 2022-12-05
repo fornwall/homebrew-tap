@@ -1,0 +1,17 @@
+name: Github CI
+
+on: workflow_dispatch
+
+jobs:
+  regenerate-formula:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - run: |
+        ./scripts/regenerate-advent-of-code.py > Formula/advent-of-code.rb
+        git add Formula/advent-of-code.rb
+        git commit -m 'Bump advent-of-code formula'
+        git push
