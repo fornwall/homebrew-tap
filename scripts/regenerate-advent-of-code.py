@@ -7,11 +7,13 @@ from hashlib import sha256
 hashes = {}
 urls = {}
 
+version = '0.1.' + str(int(time.time()))
+
 for os in ['linux', 'mac']:
     hashes[os] = {}
     urls[os] = {}
     for arch in ['aarch64', 'x86_64']:
-        url = f'https://aoc.fornwall.net/release/advent-of-code-{os}-{arch}.tar.xz'
+        url = f'https://aoc.fornwall.net/release/advent-of-code-{os}-{arch}.tar.xz?version={version}'
         request = urllib.request.Request(url, data=None, headers={
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36'
         })
@@ -20,8 +22,6 @@ for os in ['linux', 'mac']:
         h1.update(file_bytes)
         hashes[os][arch] = h1.hexdigest()
         urls[os][arch] = url
-
-version = '0.1.' + str(int(time.time()))
 
 formula = f"""class AdventOfCode < Formula
     desc "CLI to solve Advent of Code problems"
