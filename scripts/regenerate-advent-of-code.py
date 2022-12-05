@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 
+from hashlib import sha256
+import os
 import time
 import urllib.request
-from hashlib import sha256
 
 hashes = {}
 urls = {}
 
-version = '0.1.' + str(int(time.time()))
+version = os.environ['ADVENT_OF_CODE_VERSION']
 
 for os in ['linux', 'mac']:
     hashes[os] = {}

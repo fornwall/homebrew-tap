@@ -1,6 +1,12 @@
 name: Github CI
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to publish'
+        required: true
+        type: text
 
 jobs:
   regenerate-formula:
@@ -17,3 +23,6 @@ jobs:
         git add Formula/advent-of-code.rb
         git commit -m 'Bump advent-of-code formula'
         git push
+      env:
+        ADVENT_OF_CODE_VERSION: ${{ inputs.version }}
+
