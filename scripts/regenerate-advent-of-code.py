@@ -54,6 +54,7 @@ formula = f"""class AdventOfCode < Formula
 
     def install
         bin.install "advent-of-code"
+        man1.install "advent-of-code.1"
     end
 end"""
 
