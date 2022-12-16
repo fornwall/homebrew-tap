@@ -7,22 +7,22 @@ class AdventOfCode < Formula
     on_macos do
         on_arm do
             url "https://aoc.fornwall.net/release/advent-of-code-mac-aarch64.tar.xz?version=2022.0.15"
-            sha256 "7a94d95c918129eb31958007083b12977b5761547a4010759f5d4255816118fe"
+            sha256 "6444bb5c946446145097cf99bc621762770bd8c82fec7207639c699d9b47442e"
         end
         on_intel do
             url "https://aoc.fornwall.net/release/advent-of-code-mac-x86_64.tar.xz?version=2022.0.15"
-            sha256 "3da0003cbb34af3dd4077adb6a44abe40cd8455209a511335b86485dbef64dac"
+            sha256 "94b75807ddf9fdcf70651f6deba9787d6cc3dde29b23e58a606fd86106d537b8"
         end
     end
 
     on_linux do
         on_arm do
             url "https://aoc.fornwall.net/release/advent-of-code-linux-aarch64.tar.xz?version=2022.0.15"
-            sha256 "bb61c43e18ea8353b0870920e4e2efa35d01daf7ccec9b873577185f245b132b"
+            sha256 "81693788365af7b7e264adfbf3f317d47e4e79457ac717730305bcb0aa51e703"
         end
         on_intel do
             url "https://aoc.fornwall.net/release/advent-of-code-linux-x86_64.tar.xz?version=2022.0.15"
-            sha256 "024da395dc9ba474ae378640d6732aa1e85bef1d63068c932fe46bac531600d7"
+            sha256 "b4cead91bcaa173686ad722febde3d02d7c4ef19ace01c79fa1cf23ad940fe7d"
         end
     end
 
