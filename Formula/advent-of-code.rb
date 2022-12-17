@@ -2,27 +2,27 @@ class AdventOfCode < Formula
     desc "CLI to solve Advent of Code problems"
     homepage "https://aoc.fornwall.net"
 
-    version "2022.0.15"
+    version "2022.0.16"
 
     on_macos do
         on_arm do
-            url "https://aoc.fornwall.net/release/advent-of-code-mac-aarch64.tar.xz?version=2022.0.15"
-            sha256 "6444bb5c946446145097cf99bc621762770bd8c82fec7207639c699d9b47442e"
+            url "https://aoc.fornwall.net/release/advent-of-code-mac-aarch64.tar.xz?version=2022.0.16"
+            sha256 "5ef1175be75e074186570affe853c1e235032469431f202fb70c374d48750bd8"
         end
         on_intel do
-            url "https://aoc.fornwall.net/release/advent-of-code-mac-x86_64.tar.xz?version=2022.0.15"
-            sha256 "94b75807ddf9fdcf70651f6deba9787d6cc3dde29b23e58a606fd86106d537b8"
+            url "https://aoc.fornwall.net/release/advent-of-code-mac-x86_64.tar.xz?version=2022.0.16"
+            sha256 "89be555c912ea562719c24ea1fba47a436af006077a20eea5e769224d6484924"
         end
     end
 
     on_linux do
         on_arm do
-            url "https://aoc.fornwall.net/release/advent-of-code-linux-aarch64.tar.xz?version=2022.0.15"
-            sha256 "81693788365af7b7e264adfbf3f317d47e4e79457ac717730305bcb0aa51e703"
+            url "https://aoc.fornwall.net/release/advent-of-code-linux-aarch64.tar.xz?version=2022.0.16"
+            sha256 "a7c0bf84f520733bf8fc838d74e5e7329c23db774c184bb5a33d02554120fb8b"
         end
         on_intel do
-            url "https://aoc.fornwall.net/release/advent-of-code-linux-x86_64.tar.xz?version=2022.0.15"
-            sha256 "b4cead91bcaa173686ad722febde3d02d7c4ef19ace01c79fa1cf23ad940fe7d"
+            url "https://aoc.fornwall.net/release/advent-of-code-linux-x86_64.tar.xz?version=2022.0.16"
+            sha256 "3cb4ea4100b734190cdc6eed807cb9ff70c86e303df4c045f21688e8d8431e27"
         end
     end
 
