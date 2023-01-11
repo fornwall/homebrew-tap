@@ -14,7 +14,7 @@ for os in ['linux', 'mac']:
     hashes[os] = {}
     urls[os] = {}
     for arch in ['aarch64', 'x86_64']:
-        url = f'https://aoc.fornwall.net/release/advent-of-code-{os}-{arch}.tar.xz?version={version}'
+        url = f'https://github.com/fornwall/advent-of-code/releases/download/v{version}/advent-of-code-{os}-{arch}.tar.xz'
         request = urllib.request.Request(url, data=None, headers={
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36'
         })
