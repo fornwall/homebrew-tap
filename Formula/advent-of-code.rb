@@ -2,27 +2,27 @@ class AdventOfCode < Formula
     desc "CLI to solve Advent of Code problems"
     homepage "https://aoc.fornwall.net"
 
-    version "2022.0.43"
+    version "2022.0.44"
 
     on_macos do
         on_arm do
-            url "https://github.com/fornwall/advent-of-code/releases/download/v2022.0.43/advent-of-code-mac-aarch64.tar.xz"
-            sha256 "dc27dd707d9041d3b84a6894ac471b1ed548b7f59f51cecf2d822346edbf4a81"
+            url "https://github.com/fornwall/advent-of-code/releases/download/v2022.0.44/advent-of-code-mac-aarch64.tar.xz"
+            sha256 "c3b095d0beddc6002dea49a2d50f7c0d385f1f9a4e98a1ea08e930c50b7669ed"
         end
         on_intel do
-            url "https://github.com/fornwall/advent-of-code/releases/download/v2022.0.43/advent-of-code-mac-x86_64.tar.xz"
-            sha256 "e8889567032bfda4dc44099ca93fa3ca0c7090adca8676e7e6fc9317aaa40566"
+            url "https://github.com/fornwall/advent-of-code/releases/download/v2022.0.44/advent-of-code-mac-x86_64.tar.xz"
+            sha256 "384cfbfb31bca0d8de1d62bfee578c245db0ff733a72724f33c98776560b8eab"
         end
     end
 
     on_linux do
         on_arm do
-            url "https://github.com/fornwall/advent-of-code/releases/download/v2022.0.43/advent-of-code-linux-aarch64.tar.xz"
-            sha256 "9375e781ded2a4047c716a1e754c1e7034f20e99f858ba0b301eb5c9e1217ced"
+            url "https://github.com/fornwall/advent-of-code/releases/download/v2022.0.44/advent-of-code-linux-aarch64.tar.xz"
+            sha256 "89db58bf17a9ee6edb8dfdfa117ce7e5c34f288f08d58be742f31b995d354cf6"
         end
         on_intel do
-            url "https://github.com/fornwall/advent-of-code/releases/download/v2022.0.43/advent-of-code-linux-x86_64.tar.xz"
-            sha256 "b0d94c9352a94c4da5e1dab3e2d0d69c635dfff7a2c61f8ac48ea9025c634833"
+            url "https://github.com/fornwall/advent-of-code/releases/download/v2022.0.44/advent-of-code-linux-x86_64.tar.xz"
+            sha256 "288c4ddc3f9ac73c16236fb5d8d528112a974d8743217e8c7e664a724bb29bf0"
         end
     end
 
