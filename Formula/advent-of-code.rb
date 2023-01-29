@@ -2,27 +2,27 @@ class AdventOfCode < Formula
     desc "CLI to solve Advent of Code problems"
     homepage "https://aoc.fornwall.net"
 
-    version "2022.0.45"
+    version "2022.0.46"
 
     on_macos do
         on_arm do
-            url "https://github.com/fornwall/advent-of-code/releases/download/v2022.0.45/advent-of-code-mac-aarch64.tar.xz"
-            sha256 "c63dac39ed9d4747eec34c95ce877ff4798b7732a8e6e5a46aeeb3d9d26ac053"
+            url "https://github.com/fornwall/advent-of-code/releases/download/v2022.0.46/advent-of-code-mac-aarch64.tar.xz"
+            sha256 "a2667f0ded3d4c56fa5440b95a16ccf8d7909558e10431238e2b8098d1ae845f"
         end
         on_intel do
-            url "https://github.com/fornwall/advent-of-code/releases/download/v2022.0.45/advent-of-code-mac-x86_64.tar.xz"
-            sha256 "4643d93332ddda12c4e6b862d0a899c792f76272714a1189f8368254f59eebbe"
+            url "https://github.com/fornwall/advent-of-code/releases/download/v2022.0.46/advent-of-code-mac-x86_64.tar.xz"
+            sha256 "750b349576b75720f0be1aee3102f5e1b4bac9d51cb9a19f1ca4ed8b8124c475"
         end
     end
 
     on_linux do
         on_arm do
-            url "https://github.com/fornwall/advent-of-code/releases/download/v2022.0.45/advent-of-code-linux-aarch64.tar.xz"
-            sha256 "f05bf59e6ac712cb07d455493bcbab0f46b9a8652c05ab91821f903fca54fec4"
+            url "https://github.com/fornwall/advent-of-code/releases/download/v2022.0.46/advent-of-code-linux-aarch64.tar.xz"
+            sha256 "0f992443da4da8cf4acdaa485ebd62bdd744b112cadbea3d0b72f193ef334158"
         end
         on_intel do
-            url "https://github.com/fornwall/advent-of-code/releases/download/v2022.0.45/advent-of-code-linux-x86_64.tar.xz"
-            sha256 "bd112909586cad22363758b4d60c2e2ac25d76639dfb328ed40eae354a1f5795"
+            url "https://github.com/fornwall/advent-of-code/releases/download/v2022.0.46/advent-of-code-linux-x86_64.tar.xz"
+            sha256 "863d019af531ec0f822dff852bfa7eb62671051ae62c422d669ae4be0762d721"
         end
     end
 
