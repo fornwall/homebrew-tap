@@ -15,9 +15,7 @@ for os in ['linux', 'mac']:
     urls[os] = {}
     for arch in ['aarch64', 'x86_64']:
         url = f'https://github.com/fornwall/advent-of-code/releases/download/v{version}/advent-of-code-{os}-{arch}.tar.xz'
-        request = urllib.request.Request(url, data=None, headers={
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36'
-        })
+        request = urllib.request.Request(url)
         file_bytes = urllib.request.urlopen(request).read()
         h1 = sha256()
         h1.update(file_bytes)
@@ -58,4 +56,5 @@ formula = f"""class AdventOfCode < Formula
     end
 end"""
 
-print(formula)
+with open("Formula/advent-of-code.rb", "wt") as generated_file:
+    print(formula, file=generated_file)

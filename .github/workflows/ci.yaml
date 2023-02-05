@@ -17,7 +17,7 @@ jobs:
       with:
         python-version: '3.x'
     - run: |
-        ./scripts/regenerate-advent-of-code.py > Formula/advent-of-code.rb
+        ./scripts/regenerate-advent-of-code.py
         git config --global user.email "ci@example.com"
         git config --global user.name "CI Bot"
         git add Formula/advent-of-code.rb
