@@ -1,31 +1,8 @@
-name: Github CI
+name: CI
 
-on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version to publish'
-        required: true
-        type: string
+on: push
 
 jobs:
-  regenerate-formula:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
-    - run: |
-        ./scripts/regenerate-advent-of-code.py
-        git config --global user.email "ci@example.com"
-        git config --global user.name "CI Bot"
-        git add Formula/advent-of-code.rb
-        git commit -m 'Bump advent-of-code formula'
-        git push
-      env:
-        ADVENT_OF_CODE_VERSION: ${{ inputs.version }}
-
   actionlint:
     runs-on: ubuntu-latest
     steps:

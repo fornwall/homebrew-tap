@@ -1,0 +1,31 @@
+name: Publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      formula:
+        description: 'Formula to publish'
+        required: true
+        type: string
+      version:
+        description: 'Version to publish'
+        required: true
+        type: string
+
+jobs:
+  regenerate-formula:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - run: |
+        ./scripts/regenerate-${{ inputs.formula }}.py
+        git config --global user.email "ci@example.com"
+        git config --global user.name "CI Bot"
+        git add Formula/advent-of-code.rb
+        git commit -m 'Bump advent-of-code formula'
+        git push
+      env:
+        FORMULA_NEW_VERSION: ${{ inputs.version }}
