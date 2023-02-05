@@ -6,7 +6,7 @@ on:
       version:
         description: 'Version to publish'
         required: true
-        type: text
+        type: string
 
 jobs:
   regenerate-formula:
@@ -26,3 +26,12 @@ jobs:
       env:
         ADVENT_OF_CODE_VERSION: ${{ inputs.version }}
 
+  actionlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Download actionlint
+        id: get_actionlint
+        run: bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
+      - name: Check workflow files
+        run: ${{ steps.get_actionlint.outputs.executable }}
