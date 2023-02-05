@@ -2,27 +2,27 @@ class AdventOfCode < Formula
     desc "CLI to solve Advent of Code problems"
     homepage "https://aoc.fornwall.net"
 
-    version "2022.0.46"
+    version "2022.0.49"
 
     on_macos do
         on_arm do
-            url "https://github.com/fornwall/advent-of-code/releases/download/v2022.0.46/advent-of-code-mac-aarch64.tar.xz"
-            sha256 "a2667f0ded3d4c56fa5440b95a16ccf8d7909558e10431238e2b8098d1ae845f"
+            url "https://github.com/fornwall/advent-of-code/releases/download/2022.0.49/advent-of-code-mac-aarch64.tar.xz"
+            sha256 "bd1990c8d7617cb587c8f27570ae5798709455f3bce8a20111484e79fec0fceb"
         end
         on_intel do
-            url "https://github.com/fornwall/advent-of-code/releases/download/v2022.0.46/advent-of-code-mac-x86_64.tar.xz"
-            sha256 "750b349576b75720f0be1aee3102f5e1b4bac9d51cb9a19f1ca4ed8b8124c475"
+            url "https://github.com/fornwall/advent-of-code/releases/download/2022.0.49/advent-of-code-mac-x86_64.tar.xz"
+            sha256 "d0ef4986591e0ab8ce2b08c574c48c78860679ecda528a108f9364315569040e"
         end
     end
 
     on_linux do
         on_arm do
-            url "https://github.com/fornwall/advent-of-code/releases/download/v2022.0.46/advent-of-code-linux-aarch64.tar.xz"
-            sha256 "0f992443da4da8cf4acdaa485ebd62bdd744b112cadbea3d0b72f193ef334158"
+            url "https://github.com/fornwall/advent-of-code/releases/download/2022.0.49/advent-of-code-linux-aarch64.tar.xz"
+            sha256 "1c33847358f7cb778ad467dade1f64d9bf0390b1bde455a5b783fb8226a76fe1"
         end
         on_intel do
-            url "https://github.com/fornwall/advent-of-code/releases/download/v2022.0.46/advent-of-code-linux-x86_64.tar.xz"
-            sha256 "863d019af531ec0f822dff852bfa7eb62671051ae62c422d669ae4be0762d721"
+            url "https://github.com/fornwall/advent-of-code/releases/download/2022.0.49/advent-of-code-linux-x86_64.tar.xz"
+            sha256 "dd5b4e866b2d590912e2845bee4ec36954c62a4bef5eeb7926dd07f7f5fd54ef"
         end
     end
 
