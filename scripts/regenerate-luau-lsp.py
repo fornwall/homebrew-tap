@@ -14,10 +14,7 @@ for os in ['linux', 'macos']:
     hashes[os] = {}
     urls[os] = {}
     url = f'https://github.com/JohnnyMorganz/luau-lsp/releases/download/{version}/luau-lsp-{os}.zip'
-    print(url)
-    request = urllib.request.Request(url, data=None, headers={
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36'
-    })
+    request = urllib.request.Request(url)
     file_bytes = urllib.request.urlopen(request).read()
     h1 = sha256()
     h1.update(file_bytes)
