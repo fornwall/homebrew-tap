@@ -14,7 +14,7 @@ for os in ['linux', 'mac']:
     hashes[os] = {}
     urls[os] = {}
     for arch in ['aarch64', 'x86_64']:
-        url = f'https://github.com/fornwall/advent-of-code/releases/download/v{version}/advent-of-code-{os}-{arch}.tar.xz'
+        url = f'https://github.com/fornwall/advent-of-code/releases/download/{version}/advent-of-code-{os}-{arch}.tar.xz'
         request = urllib.request.Request(url)
         file_bytes = urllib.request.urlopen(request).read()
         h1 = sha256()

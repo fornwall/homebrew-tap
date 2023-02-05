@@ -19,8 +19,6 @@ packages = [
     }
 ]
 
-packages = [ { "formula_name": "luau-lsp", "github_repo": "JohnnyMorganz/luau-lsp" } ]
-
 for package in packages:
     formula_file = f"Formula/{package['formula_name']}.rb"
     formula_src = open(formula_file, "rt").read()
