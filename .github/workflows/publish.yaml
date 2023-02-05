@@ -25,7 +25,7 @@ jobs:
         git config --global user.email "ci@example.com"
         git config --global user.name "CI Bot"
         git add Formula/advent-of-code.rb
-        git commit -m 'Bump advent-of-code formula'
+        git commit -m 'Bump ${{ inputs.formula }} from publish.yaml'
         git push
       env:
         FORMULA_NEW_VERSION: ${{ inputs.version }}
