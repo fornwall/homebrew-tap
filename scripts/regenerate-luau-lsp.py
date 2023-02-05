@@ -8,7 +8,7 @@ import urllib.request
 hashes = {}
 urls = {}
 
-version = os.environ['LUAU_LSP_VERSION']
+version = os.environ['FORMULA_NEW_VERSION']
 
 for os in ['linux', 'macos']:
     hashes[os] = {}
