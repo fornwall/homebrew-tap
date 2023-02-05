@@ -47,5 +47,5 @@ formula = f"""class LuauLsp < Formula
     end
 end"""
 
-with open("Formula/luau-lsp.py", "wt") as generated_file:
+with open("Formula/luau-lsp.rb", "wt") as generated_file:
     print(formula, file=generated_file)
