@@ -14,5 +14,4 @@ jobs:
         git config --global user.email "ci@example.com"
         git config --global user.name "CI Bot"
         git add .
-        git commit -m 'Update formulas from scheduled job'
-        git push
+        if git commit -m 'Update formulas from scheduled job'; then git push; fi
