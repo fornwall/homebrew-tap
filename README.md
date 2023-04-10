@@ -1,5 +1,5 @@
 # fornwall/tap
-A third-party [Homebrew](https://brew.sh/) repository.
+Third-party [Homebrew](https://brew.sh/) repository - a [tap](https://docs.brew.sh/Taps).
 
 ## Packages
 - `advent-of-code`
