@@ -14,6 +14,10 @@ packages = [
         "github_repo": "fornwall/advent-of-code",
     },
     {
+        "formula_name": "rust-gpu",
+        "github_repo": "fornwall/rust-gpu-compiler",
+    },
+    {
         "formula_name": "luau-lsp",
         "github_repo": "JohnnyMorganz/luau-lsp"
     }
