@@ -1,35 +1,33 @@
-class RustGpu < Formula
-    desc "CLI for compiling rust-gpu shaders"
-    homepage "https://github.com/fornwall/rust-gpu-compiler"
+class AdventOfCode < Formula
+    desc "CLI to solve Advent of Code problems"
+    homepage "https://aoc.fornwall.net"
 
-    version "0.9.0"
-
-    depends_on "vulkan-tools"
+    version "2022.0.64"
 
     on_macos do
         on_arm do
-            url "https://github.com/fornwall/rust-gpu-compiler/releases/download/0.9.0/rust-gpu-compiler-aarch64-apple-darwin.zip"
-            sha256 "0d4d1c1b812e1b934a663e94ee618841adbe3f67483adc45a1973f8dafc19471"
+            url "https://github.com/fornwall/advent-of-code/releases/download/2022.0.64/advent-of-code-mac-aarch64.tar.xz"
+            sha256 "192d183dfb4d3f046af5caaa7d0bd97330e157ce3e7b6243dd06ebffae244fd3"
+        end
+        on_intel do
+            url "https://github.com/fornwall/advent-of-code/releases/download/2022.0.64/advent-of-code-mac-x86_64.tar.xz"
+            sha256 "f085bbd1d9b4a881577579c5bf171ba9169ac04c7dbeddcf56f837b2a82dccd4"
         end
     end
 
     on_linux do
+        on_arm do
+            url "https://github.com/fornwall/advent-of-code/releases/download/2022.0.64/advent-of-code-linux-aarch64.tar.xz"
+            sha256 "bb81317fd865b3435044c53ef246bbc3db4427fe1791ad99f35f5c50a8dd72a3"
+        end
         on_intel do
-            url "https://github.com/fornwall/rust-gpu-compiler/releases/download/0.9.0/rust-gpu-compiler-x86_64-unknown-linux-gnu.zip"
-            sha256 "f899938dbfd8b2f939d52c18462debf7879faaba6a6d86feaef72c2947b2113e"
+            url "https://github.com/fornwall/advent-of-code/releases/download/2022.0.64/advent-of-code-linux-x86_64.tar.xz"
+            sha256 "e67568c1c523d1bf8c638ff13f953cd880452cba3cf7d6078fee86eda2bef91e"
         end
     end
 
     def install
         bin.install "advent-of-code"
-
-        share.install "share/toolchain"
-
-        on_linux do
-          lib.install "lib/librustc_codegen_spirv.so"
-        end
-        on_macos do
-          lib.install "lib/librustc_codegen_spirv.dylib"
-        end
+        man1.install "advent-of-code.1"
     end
 end
