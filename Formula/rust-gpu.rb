@@ -2,21 +2,21 @@ class RustGpu < Formula
     desc "CLI for compiling rust-gpu shaders"
     homepage "https://github.com/fornwall/rust-gpu-compiler"
 
-    version "0.9.0"
+    version "0.10.0"
 
     depends_on "vulkan-tools"
 
     on_macos do
         on_arm do
-            url "https://github.com/fornwall/rust-gpu-compiler/releases/download/0.9.0/rust-gpu-compiler-aarch64-apple-darwin.zip"
-            sha256 "0d4d1c1b812e1b934a663e94ee618841adbe3f67483adc45a1973f8dafc19471"
+            url "https://github.com/fornwall/rust-gpu-compiler/releases/download/0.10.0/rust-gpu-compiler-aarch64-apple-darwin.zip"
+            sha256 "23636a8791c5a5cd9e6b05bc95c3f2f9ce26dbe9de8208fcbf25682b9cceffa4"
         end
     end
 
     on_linux do
         on_intel do
-            url "https://github.com/fornwall/rust-gpu-compiler/releases/download/0.9.0/rust-gpu-compiler-x86_64-unknown-linux-gnu.zip"
-            sha256 "f899938dbfd8b2f939d52c18462debf7879faaba6a6d86feaef72c2947b2113e"
+            url "https://github.com/fornwall/rust-gpu-compiler/releases/download/0.10.0/rust-gpu-compiler-x86_64-unknown-linux-gnu.zip"
+            sha256 "2804073c2dd670cfde25d581ac8b88d2f1451367679a3f3c0370da04c7ebf880"
         end
     end
 
