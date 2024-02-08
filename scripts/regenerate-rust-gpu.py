@@ -44,7 +44,7 @@ formula = f"""class RustGpu < Formula
     end
 
     def install
-        bin.install "advent-of-code"
+        bin.install "bin/rust-gpu-compiler"
 
         share.install "share/toolchain"
 
@@ -57,5 +57,5 @@ formula = f"""class RustGpu < Formula
     end
 end"""
 
-with open("Formula/advent-of-code.rb", "wt") as generated_file:
+with open("Formula/rust-gpu.rb", "wt") as generated_file:
     print(formula, file=generated_file)
