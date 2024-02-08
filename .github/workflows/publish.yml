@@ -24,7 +24,7 @@ jobs:
         ./scripts/regenerate-${{ inputs.formula }}.py
         git config --global user.email "ci@example.com"
         git config --global user.name "CI Bot"
-        git add Formula/advent-of-code.rb
+        git add Formula/*.rb
         git commit -m 'Bump ${{ inputs.formula }} from publish.yaml'
         git push
       env:
