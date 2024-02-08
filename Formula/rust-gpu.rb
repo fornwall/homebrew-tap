@@ -21,7 +21,7 @@ class RustGpu < Formula
     end
 
     def install
-        bin.install "bin/rust-gpu-compiler"
+        bin.install "bin/rust-gpu"
 
         share.install "share/toolchain"
 
