@@ -2,7 +2,7 @@ class RustGpu < Formula
     desc "CLI for compiling rust-gpu shaders"
     homepage "https://github.com/fornwall/rust-gpu-compiler"
 
-    version "0.17.2"
+    version "0.17.3"
 
     depends_on "vulkan-tools"
 
@@ -38,7 +38,7 @@ class RustGpu < Formula
         rust_gpu = HOMEBREW_PREFIX/"bin/rust-gpu"
         example_shader = HOMEBREW_PREFIX/"share/rust-gpu-toolchain/example.rs"
         # Make the initial slow build of host proc macros:
-        system rust_gpu, example_shader
+        system rust_gpu, "-o", "/dev/null", example_shader
     end
 
 end
