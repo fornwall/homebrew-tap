@@ -59,7 +59,7 @@ formula = f"""class RustGpu < Formula
     def post_install
         # Run initial slow host build of proc macro
         rust_gpu = HOMEBREW_PREFIX/"bin/rust-gpu"
-        example_shader = HOMEBREW_PREFIX/"share/example.rs"
+        example_shader = HOMEBREW_PREFIX/"share/rust-gpu-toolchain/example.rs"
         # Make the initial slow build of host proc macros:
         system rust_gpu, "-o", "/dev/null", example_shader
     end
