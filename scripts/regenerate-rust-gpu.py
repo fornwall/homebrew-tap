@@ -44,9 +44,6 @@ formula = f"""class RustGpu < Formula
     end
 
     def install
-        # Make the initial slow build of host proc macros:
-        system "./bin/rust-gpu", "-o", "/dev/null", "share/example.rs"
-
         bin.install "bin/rust-gpu"
 
         share.install "share/toolchain"
@@ -58,6 +55,15 @@ formula = f"""class RustGpu < Formula
           lib.install "lib/librustc_codegen_spirv.dylib"
         end
     end
+
+    def post_install
+        # Run initial slow host build of proc macro
+        rust_gpu = HOMEBREW_PREFIX/"bin/rust-gpu"
+        example_shader = HOMEBREW_PREFIX/"share/example.rs"
+        # Make the initial slow build of host proc macros:
+        system rust_gpu, "-o", "/dev/null", example_shader
+    end
+
 end"""
 
 with open("Formula/rust-gpu.rb", "wt") as generated_file:
