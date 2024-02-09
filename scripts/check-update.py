@@ -15,7 +15,7 @@ packages = [
     },
     {
         "formula_name": "rust-gpu",
-        "github_repo": "fornwall/rust-gpu-compiler",
+        "github_repo": "fornwall/rust-gpu-driver",
     },
     {
         "formula_name": "luau-lsp",
