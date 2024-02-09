@@ -2,7 +2,7 @@ class RustGpu < Formula
     desc "CLI for compiling rust-gpu shaders"
     homepage "https://github.com/fornwall/rust-gpu-compiler"
 
-    version "0.14.1"
+    version "0.14.2"
 
     depends_on "vulkan-tools"
 
@@ -21,6 +21,9 @@ class RustGpu < Formula
     end
 
     def install
+        # Make the initial slow build of host proc macros:
+        system "./bin/rust-gpu", "-o", "/dev/null", "share/example.rs"
+
         bin.install "bin/rust-gpu"
 
         share.install "share/toolchain"
@@ -31,9 +34,5 @@ class RustGpu < Formula
         on_macos do
           lib.install "lib/librustc_codegen_spirv.dylib"
         end
-
-        # Make the initial slow build of host proc macros:
-        system "ls", "-lha", "bin"
-        system "./bin/rust-gpu", "-o", "/dev/null", "share/example.rs"
     end
 end
