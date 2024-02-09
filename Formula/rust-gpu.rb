@@ -1,6 +1,6 @@
 class RustGpu < Formula
-    desc "CLI for compiling rust-gpu shaders"
-    homepage "https://github.com/fornwall/rust-gpu-compiler"
+    desc "CLI driver for compiling rust-gpu shaders"
+    homepage "https://github.com/fornwall/rust-gpu-driver"
 
     version "0.19.0"
 
@@ -8,14 +8,14 @@ class RustGpu < Formula
 
     on_macos do
         on_arm do
-            url "https://github.com/fornwall/rust-gpu-compiler/releases/download/0.19.0/rust-gpu-compiler-aarch64-apple-darwin.zip"
+            url "https://github.com/fornwall/rust-gpu-driver/releases/download/0.19.0/rust-gpu-driver-aarch64-apple-darwin.zip"
             sha256 "f80ced4455414735c9ab3a0175a6d12ea606c4e273eb99bfc0cbe9ca6e1f6021"
         end
     end
 
     on_linux do
         on_intel do
-            url "https://github.com/fornwall/rust-gpu-compiler/releases/download/0.19.0/rust-gpu-compiler-x86_64-unknown-linux-gnu.zip"
+            url "https://github.com/fornwall/rust-gpu-driver/releases/download/0.19.0/rust-gpu-driver-x86_64-unknown-linux-gnu.zip"
             sha256 "b558c940c67fe005abfa914f09fcd27278236a4e489da8a8acfd87efb1ea261f"
         end
     end
