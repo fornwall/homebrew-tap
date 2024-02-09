@@ -2,21 +2,21 @@ class RustGpu < Formula
     desc "CLI for compiling rust-gpu shaders"
     homepage "https://github.com/fornwall/rust-gpu-compiler"
 
-    version "0.17.4"
+    version "0.18.0"
 
     depends_on "vulkan-tools"
 
     on_macos do
         on_arm do
-            url "https://github.com/fornwall/rust-gpu-compiler/releases/download/0.17.0/rust-gpu-compiler-aarch64-apple-darwin.zip"
-            sha256 "f3c02c70888e70bb9530758a8e8af28eb8074b10d10d47f7a7c6d61cc2c24453"
+            url "https://github.com/fornwall/rust-gpu-compiler/releases/download/0.18.0/rust-gpu-compiler-aarch64-apple-darwin.zip"
+            sha256 "a7e475b40f636996052a5b536a9a0818de9ab523dd95839a474193b9f269333e"
         end
     end
 
     on_linux do
         on_intel do
-            url "https://github.com/fornwall/rust-gpu-compiler/releases/download/0.17.0/rust-gpu-compiler-x86_64-unknown-linux-gnu.zip"
-            sha256 "e3a8a441adc13b5b7c4417b5a8bd23769b7a2daf6ef0c6eab2176b014878fdec"
+            url "https://github.com/fornwall/rust-gpu-compiler/releases/download/0.18.0/rust-gpu-compiler-x86_64-unknown-linux-gnu.zip"
+            sha256 "f372c8b1cd72a816ed5e4463228b3a3f0269f2ebdb7747d00c1aeddba10590fc"
         end
     end
 
@@ -35,8 +35,8 @@ class RustGpu < Formula
 
     def post_install
         # Run initial slow host build of proc macro
-        rust_gpu = bin/"rust-gpu"
-        example_shader = share/"rust-gpu-toolchain/example.rs"
+        rust_gpu = HOMEBREW_PREFIX/"bin/rust-gpu"
+        example_shader = HOMEBREW_PREFIX/"share/rust-gpu-toolchain/example.rs"
         # Make the initial slow build of host proc macros:
         system rust_gpu, "-o", "/dev/null", example_shader
     end
