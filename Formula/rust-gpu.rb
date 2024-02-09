@@ -33,6 +33,7 @@ class RustGpu < Formula
         end
 
         # Make the initial slow build of host proc macros:
+        system "ls", "-lha", "bin"
         system "./bin/rust-gpu", "-o", "/dev/null", "share/example.rs"
     end
 end
