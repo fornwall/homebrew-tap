@@ -2,7 +2,7 @@ class RustGpu < Formula
     desc "CLI for compiling rust-gpu shaders"
     homepage "https://github.com/fornwall/rust-gpu-compiler"
 
-    version "0.14.0"
+    version "0.14.1"
 
     depends_on "vulkan-tools"
 
