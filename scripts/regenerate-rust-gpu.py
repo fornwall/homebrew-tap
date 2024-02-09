@@ -44,6 +44,9 @@ formula = f"""class RustGpu < Formula
     end
 
     def install
+        # Make the initial slow build of host proc macros:
+        system "./bin/rust-gpu", "-o", "/dev/null", "share/example.rs"
+
         bin.install "bin/rust-gpu"
 
         share.install "share/toolchain"
@@ -54,9 +57,6 @@ formula = f"""class RustGpu < Formula
         on_macos do
           lib.install "lib/librustc_codegen_spirv.dylib"
         end
-
-        # Make the initial slow build of host proc macros:
-        system "./bin/rust-gpu", "-o", "/dev/null", "share/example.rs"
     end
 end"""
 
