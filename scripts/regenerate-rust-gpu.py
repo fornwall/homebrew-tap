@@ -13,7 +13,7 @@ version = os.environ['FORMULA_NEW_VERSION']
 for (os, arch, complete) in [('linux', 'x86_64', 'x86_64-unknown-linux-gnu'), ('mac', 'aarch64', 'aarch64-apple-darwin')]:
     hashes[os] = {}
     urls[os] = {}
-    url = f'https://github.com/fornwall/rust-gpu-compiler/releases/download/{version}/rust-gpu-compiler-{complete}.zip'
+    url = f'https://github.com/fornwall/rust-gpu-driver/releases/download/{version}/rust-gpu-driver-{complete}.zip'
     request = urllib.request.Request(url)
     file_bytes = urllib.request.urlopen(request).read()
     h1 = sha256()
