@@ -23,7 +23,7 @@ class RustGpu < Formula
     def install
         bin.install "bin/rust-gpu"
 
-        share.install "share/toolchain"
+        share.install "share/rust-gpu-toolchain"
 
         on_linux do
           lib.install "lib/librustc_codegen_spirv.so"
