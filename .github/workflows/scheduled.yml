@@ -8,7 +8,7 @@ jobs:
   scheduled:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - run: scripts/check-update.py
     - run: |
         git config --global user.email "ci@example.com"
