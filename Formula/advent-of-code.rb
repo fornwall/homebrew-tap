@@ -2,27 +2,27 @@ class AdventOfCode < Formula
     desc "CLI to solve Advent of Code problems"
     homepage "https://aoc.fornwall.net"
 
-    version "2024.2.2"
+    version "2024.3.0"
 
     on_macos do
         on_arm do
-            url "https://github.com/fornwall/advent-of-code/releases/download/2024.2.2/advent-of-code-mac-aarch64.tar.xz"
-            sha256 "b93ff2324fc2e0ab104f65fb411c46a27f2f04944174e641d3595f9c71c59bb9"
+            url "https://github.com/fornwall/advent-of-code/releases/download/2024.3.0/advent-of-code-mac-aarch64.tar.xz"
+            sha256 "679808d66a8b4028b3fd186ad3c758176b2c040587755bd2978da78e949fe193"
         end
         on_intel do
-            url "https://github.com/fornwall/advent-of-code/releases/download/2024.2.2/advent-of-code-mac-x86_64.tar.xz"
-            sha256 "96a42f6ba97f6ce2cc2b7e76d85309d8ccad6662d7a6d36a324abf717c67ca4d"
+            url "https://github.com/fornwall/advent-of-code/releases/download/2024.3.0/advent-of-code-mac-x86_64.tar.xz"
+            sha256 "114bc1e5175160c1ca969eaddf0fe6ab10ef3f2c4d21e9c2ca36e5bd6cb33574"
         end
     end
 
     on_linux do
         on_arm do
-            url "https://github.com/fornwall/advent-of-code/releases/download/2024.2.2/advent-of-code-linux-aarch64.tar.xz"
-            sha256 "30a591d08e4e294ff42fedf5344ef2fabcccbf43c6f085785c9b0574d6c62e4b"
+            url "https://github.com/fornwall/advent-of-code/releases/download/2024.3.0/advent-of-code-linux-aarch64.tar.xz"
+            sha256 "16d2b77cc4c0b92f787917f6072920c541e441663aeb01ba17c0ec3169089e2f"
         end
         on_intel do
-            url "https://github.com/fornwall/advent-of-code/releases/download/2024.2.2/advent-of-code-linux-x86_64.tar.xz"
-            sha256 "a2635b583ff5c8b8fdb4f14504334b944a7b0feb5f9a5d2a162d469c55a07b4c"
+            url "https://github.com/fornwall/advent-of-code/releases/download/2024.3.0/advent-of-code-linux-x86_64.tar.xz"
+            sha256 "9ed000b8bb4858b44d80908ac70c77b1b7a196c37d8e42327c91bdbc3ba05d80"
         end
     end
 
