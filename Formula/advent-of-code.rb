@@ -2,27 +2,27 @@ class AdventOfCode < Formula
     desc "CLI to solve Advent of Code problems"
     homepage "https://aoc.fornwall.net"
 
-    version "2024.14.0"
+    version "2024.15.0"
 
     on_macos do
         on_arm do
-            url "https://github.com/fornwall/advent-of-code/releases/download/2024.14.0/advent-of-code-mac-aarch64.tar.xz"
-            sha256 "50b0ca4d26124b2b861f4d813d47926aecca5a04680ac378c4716f3889f60999"
+            url "https://github.com/fornwall/advent-of-code/releases/download/2024.15.0/advent-of-code-mac-aarch64.tar.xz"
+            sha256 "d2d4bee18e4d934d08ff5039cc68a372411f83baf6bb911ac3267dd9415e7ea0"
         end
         on_intel do
-            url "https://github.com/fornwall/advent-of-code/releases/download/2024.14.0/advent-of-code-mac-x86_64.tar.xz"
-            sha256 "f26d354931e6c46186c8867d2eb7f4449aef9bedf5f30e3908ecf78b018fabf4"
+            url "https://github.com/fornwall/advent-of-code/releases/download/2024.15.0/advent-of-code-mac-x86_64.tar.xz"
+            sha256 "8bfbc37627110d493cfad1c24e613e84b5a0b5f91410691a40cf147ee04a1162"
         end
     end
 
     on_linux do
         on_arm do
-            url "https://github.com/fornwall/advent-of-code/releases/download/2024.14.0/advent-of-code-linux-aarch64.tar.xz"
-            sha256 "1c2404d076ac0e987430ca86c4be1f27d38d7bb0d85d28a4a3761ff643de31a4"
+            url "https://github.com/fornwall/advent-of-code/releases/download/2024.15.0/advent-of-code-linux-aarch64.tar.xz"
+            sha256 "f63cf0e13924bd9df2ccbc91e9f7c8ef38f6e9e62b304e111704445fb6750cf6"
         end
         on_intel do
-            url "https://github.com/fornwall/advent-of-code/releases/download/2024.14.0/advent-of-code-linux-x86_64.tar.xz"
-            sha256 "24ba06ed50da9cc7226ebb648e7aed53441accebc60c19eff32659fc7304c641"
+            url "https://github.com/fornwall/advent-of-code/releases/download/2024.15.0/advent-of-code-linux-x86_64.tar.xz"
+            sha256 "0c5c640566c4a41c896b03e275fd7da1b33927be4b1989447735c162d3ffe8dc"
         end
     end
 
