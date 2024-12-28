@@ -2,17 +2,17 @@ class LuauLsp < Formula
     desc "Language Server Implementation for Luau"
     homepage "https://github.com/JohnnyMorganz/luau-lsp"
 
-    version "1.37.0"
+    version "1.38.0"
 
     on_macos do
-        url "https://github.com/JohnnyMorganz/luau-lsp/releases/download/1.37.0/luau-lsp-macos.zip"
-        sha256 "814a2c12afe8ded0f3f12113011cec3c3339b96f4c5363c5e30fdd8cbbd4b316"
+        url "https://github.com/JohnnyMorganz/luau-lsp/releases/download/1.38.0/luau-lsp-macos.zip"
+        sha256 "c83dbc5bd9dda91d828cab2dab4678bdcce3fb70d1620caac11b33d83aefb600"
     end
 
     on_linux do
         on_intel do
-            url "https://github.com/JohnnyMorganz/luau-lsp/releases/download/1.37.0/luau-lsp-linux.zip"
-            sha256 "169ea813fa8957fee9d34463f2a780a7b31c700bf135c6881d697b384a5cc9df"
+            url "https://github.com/JohnnyMorganz/luau-lsp/releases/download/1.38.0/luau-lsp-linux.zip"
+            sha256 "9033ca1524a9562602ca0022deca95ee88af38ca224a230ba5742d2c5b4ee01e"
         end
     end
 
