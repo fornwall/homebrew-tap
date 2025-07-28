@@ -10,7 +10,7 @@ urls = {}
 
 version = os.environ['FORMULA_NEW_VERSION']
 
-for os in ['linux', 'macos']:
+for os in ['linux-x86_64', 'macos']:
     hashes[os] = {}
     urls[os] = {}
     url = f'https://github.com/JohnnyMorganz/luau-lsp/releases/download/{version}/luau-lsp-{os}.zip'
@@ -34,8 +34,8 @@ formula = f"""class LuauLsp < Formula
 
     on_linux do
         on_intel do
-            url "{urls['linux']}"
-            sha256 "{hashes['linux']}"
+            url "{urls['linux-x86_64']}"
+            sha256 "{hashes['linux-x86_64']}"
         end
     end
 
