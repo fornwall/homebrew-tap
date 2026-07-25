@@ -22,7 +22,7 @@ jobs:
     name: Python
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v6
         with:
           python-version: '3.x'
@@ -39,7 +39,7 @@ jobs:
     name: Workflows
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - name: Install actionlint
         run: |
           curl --fail --silent --show-error --location \
@@ -59,7 +59,7 @@ jobs:
       HOMEBREW_NO_ANALYTICS: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       # Homebrew is not preinstalled on the Ubuntu runners. This action is
       # only released as tagged commits, so it has to be pinned by SHA.
       - uses: Homebrew/actions/setup-homebrew@1f8e202ffddf94def7f42f6fa3a482e821489f9c # 2026.07.10.1
