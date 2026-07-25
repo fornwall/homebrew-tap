@@ -60,8 +60,9 @@ jobs:
       HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
       - uses: actions/checkout@v5
-      # Homebrew is not preinstalled on the Ubuntu runners.
-      - uses: Homebrew/actions/setup-homebrew@master
+      # Homebrew is not preinstalled on the Ubuntu runners. This action is
+      # only released as tagged commits, so it has to be pinned by SHA.
+      - uses: Homebrew/actions/setup-homebrew@1f8e202ffddf94def7f42f6fa3a482e821489f9c # 2026.07.10.1
       - name: Link the checkout as a tap
         # `brew style` only accepts formulas that live inside a tap.
         run: |
