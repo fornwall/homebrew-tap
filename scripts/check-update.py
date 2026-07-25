@@ -1,42 +1,53 @@
 #!/usr/bin/env python3
+"""Update every formula in this tap to the latest upstream GitHub release.
 
-from hashlib import sha256
-import re
-import os
-import time
-import urllib.request
-import subprocess
+Run from the scheduled workflow. Formulas already at the latest release are
+left untouched, so a run with nothing to do produces no changes to commit.
+"""
+
+from __future__ import annotations
+
 import json
+import sys
 
-packages = [
-    {
-        "formula_name": "advent-of-code",
-        "github_repo": "fornwall/advent-of-code",
-    },
-    {
-        "formula_name": "rust-gpu",
-        "github_repo": "fornwall/rust-gpu-driver",
-    },
-    {
-        "formula_name": "luau-lsp",
-        "github_repo": "JohnnyMorganz/luau-lsp"
-    }
-]
-
-for package in packages:
-    formula_file = f"Formula/{package['formula_name']}.rb"
-    formula_src = open(formula_file, "rt").read()
-    formula_current_version = re.findall('version "(.*)"', formula_src)[0]
-
-    json_url = f"https://api.github.com/repos/{package['github_repo']}/releases/latest"
-    request = urllib.request.Request(json_url)
-    file_bytes = urllib.request.urlopen(request).read()
-    release_json = json.loads(file_bytes)
-    formula_latest_version = release_json["name"]
+from packages import PACKAGES, Package
+from regenerate import current_version, open_url, regenerate
 
 
-    if formula_current_version != formula_latest_version:
-        print(f"Package {package['formula_name']}: Updating from {formula_current_version} to {formula_latest_version}")
-        new_environ = os.environ.copy()
-        new_environ['FORMULA_NEW_VERSION'] = formula_latest_version
-        subprocess.check_call(f"./scripts/regenerate-{package['formula_name']}.py", env=new_environ)
+def latest_release_version(repository: str) -> str:
+    """The tag of the latest release of a GitHub repository."""
+    url = f"https://api.github.com/repos/{repository}/releases/latest"
+    with open_url(url) as response:
+        release = json.load(response)
+    return release["tag_name"]
+
+
+def update(package: Package) -> bool:
+    """Regenerate `package` if a newer release exists. True if it changed."""
+    current = current_version(package)
+    latest = latest_release_version(package.repository)
+    if current == latest:
+        print(f"{package.name}: up to date at {current}")
+        return False
+    print(f"{package.name}: updating from {current} to {latest}")
+    regenerate(package, latest)
+    return True
+
+
+def main() -> int:
+    failed = []
+    for package in PACKAGES:
+        try:
+            update(package)
+        except (OSError, KeyError, ValueError) as error:
+            # Keep going: one broken upstream should not block the others.
+            print(f"{package.name}: update failed: {error}", file=sys.stderr)
+            failed.append(package.name)
+    if failed:
+        print(f"\nFailed to update: {', '.join(failed)}", file=sys.stderr)
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

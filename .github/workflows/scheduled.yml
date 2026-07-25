@@ -2,16 +2,28 @@ name: Scheduled
 
 on:
   schedule:
-  - cron: '0 23 * * *'
+    - cron: '0 23 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  # Shared with the publish workflow, as both push to the default branch.
+  group: update-formulas
 
 jobs:
-  scheduled:
+  update:
+    name: Update formulas
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - run: scripts/check-update.py
-    - run: |
-        git config --global user.email "ci@example.com"
-        git config --global user.name "CI Bot"
-        git add .
-        if git commit -m 'Update formulas from scheduled job'; then git push; fi
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+      - name: Update formulas to the latest releases
+        run: scripts/check-update.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit and push
+        run: scripts/commit-and-push.sh "Update formulas from scheduled job"

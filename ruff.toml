@@ -1,0 +1,12 @@
+target-version = "py311"
+
+[lint]
+select = [
+    "B",   # flake8-bugbear
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "I",   # isort
+    "RUF", # ruff-specific rules
+    "SIM", # flake8-simplify
+    "UP",  # pyupgrade
+]

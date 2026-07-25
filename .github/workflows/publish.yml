@@ -4,28 +4,38 @@ on:
   workflow_dispatch:
     inputs:
       formula:
-        description: 'Formula to publish'
+        description: Formula to publish
         required: true
-        type: string
+        type: choice
+        options:
+          - advent-of-code
+          - googlesql-execute-query
+          - luau-lsp
       version:
-        description: 'Version to publish'
+        description: Version to publish
         required: true
         type: string
 
+permissions:
+  contents: write
+
+concurrency:
+  # Shared with the scheduled workflow, as both push to the default branch.
+  group: update-formulas
+
 jobs:
-  regenerate-formula:
+  publish:
+    name: Publish ${{ inputs.formula }} ${{ inputs.version }}
     runs-on: ubuntu-latest
+    env:
+      FORMULA: ${{ inputs.formula }}
+      VERSION: ${{ inputs.version }}
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-python@v5
-      with:
-        python-version: '3.x'
-    - run: |
-        ./scripts/regenerate-${{ inputs.formula }}.py
-        git config --global user.email "ci@example.com"
-        git config --global user.name "CI Bot"
-        git add Formula/*.rb
-        git commit -m 'Bump ${{ inputs.formula }} from publish.yaml'
-        git push
-      env:
-        FORMULA_NEW_VERSION: ${{ inputs.version }}
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+      - name: Regenerate formula
+        run: scripts/regenerate.py "$FORMULA" "$VERSION"
+      - name: Commit and push
+        run: scripts/commit-and-push.sh "Bump $FORMULA to $VERSION"

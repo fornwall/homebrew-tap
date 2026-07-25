@@ -1,2 +1,8 @@
 *.swp
 *.swo
+__pycache__/
+.ruff_cache/
+
+# Downloaded by the CI workflow.
+/actionlint
+/download-actionlint.bash

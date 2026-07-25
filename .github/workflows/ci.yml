@@ -1,14 +1,70 @@
 name: CI
 
-on: push
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  ACTIONLINT_VERSION: 1.7.12
+  RUFF_VERSION: 0.16.0
 
 jobs:
-  actionlint:
+  python:
+    name: Python
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Download actionlint
-        id: get_actionlint
-        run: bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
-      - name: Check workflow files
-        run: ${{ steps.get_actionlint.outputs.executable }}
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+      - name: Install ruff
+        run: pipx install "ruff==$RUFF_VERSION"
+      - name: Lint
+        run: ruff check --output-format=github
+      - name: Check formatting
+        run: ruff format --check --diff
+      - name: Check formulas match their templates
+        run: scripts/regenerate.py --check
+
+  workflows:
+    name: Workflows
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Install actionlint
+        run: |
+          curl --fail --silent --show-error --location \
+            --output download-actionlint.bash \
+            https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash
+          bash download-actionlint.bash "$ACTIONLINT_VERSION"
+      - name: Lint workflows
+        # This also runs shellcheck on `run:` steps, as it is preinstalled.
+        run: ./actionlint -color
+      - name: Lint shell scripts
+        run: shellcheck scripts/*.sh
+
+  formulas:
+    name: Formulas
+    runs-on: ubuntu-latest
+    env:
+      HOMEBREW_NO_ANALYTICS: 1
+      HOMEBREW_NO_AUTO_UPDATE: 1
+    steps:
+      - uses: actions/checkout@v5
+      - name: Link the checkout as a tap
+        # `brew style` only accepts formulas that live inside a tap.
+        run: |
+          taps="$(brew --repository)/Library/Taps/fornwall"
+          mkdir -p "$taps"
+          ln -s "$GITHUB_WORKSPACE" "$taps/homebrew-tap"
+      - name: Check formula style
+        run: brew style fornwall/tap
