@@ -21,9 +21,9 @@ class GooglesqlExecuteQuery < Formula
 
   def install
     binary = OS.mac? ? "execute_query_macos" : "execute_query_linux"
-    bin.install binary => "googlesql-execute-query"
+    bin.install binary => "execute_query"
     # The release assets are uncompressed binaries, downloaded without the
     # executable bit set.
-    chmod 0555, bin/"googlesql-execute-query"
+    chmod 0555, bin/"execute_query"
   end
 end

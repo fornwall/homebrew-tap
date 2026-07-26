@@ -11,7 +11,7 @@ Third-party [Homebrew](https://brew.sh/) repository - a [tap](https://docs.brew.
   - Install with: `brew install fornwall/tap/advent-of-code`
 - `googlesql-execute-query`
   - The `execute_query` tool from [GoogleSQL](https://github.com/google/googlesql)
-    (formerly ZetaSQL), installed as `googlesql-execute-query`.
+    (formerly ZetaSQL), installed under its upstream name `execute_query`.
     Upstream only ships an arm64 binary for macOS and an x86_64 one for Linux.
   - Homepage: https://github.com/google/googlesql
   - Install with: `brew install fornwall/tap/googlesql-execute-query`
