@@ -1,21 +1,21 @@
 class GooglesqlExecuteQuery < Formula
   desc "Run SQL queries with the GoogleSQL reference implementation"
   homepage "https://github.com/google/googlesql"
-  version "2026.10.3"
+  version "2026.11.1"
   license "Apache-2.0"
 
   # Upstream only ships an arm64 binary for macOS and an x86_64 one for Linux.
   on_macos do
     on_arm do
-      url "https://github.com/google/googlesql/releases/download/2026.10.3/execute_query_macos"
-      sha256 "d54ef2cb6dacf626d0291c679d0173a2d66608b84179de933fa43171e002ed08"
+      url "https://github.com/google/googlesql/releases/download/2026.11.1/execute_query_macos"
+      sha256 "fc555255afdb0a01e17c751d907cb8092c5e762aa1c8622ac3132c6e4c6906ce"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/google/googlesql/releases/download/2026.10.3/execute_query_linux"
-      sha256 "2ae22e017e31badcffc77cf51662b281315bf6a0991df107d89422bf837ca912"
+      url "https://github.com/google/googlesql/releases/download/2026.11.1/execute_query_linux"
+      sha256 "5e654aeec9c4bc41231991ab5b6a003ae51e08148ac4e64b30d438c6ae4218d9"
     end
   end
 
